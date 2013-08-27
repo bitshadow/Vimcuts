@@ -5,23 +5,23 @@ endif
 
 function! Hellovimcuts()
 python << EOF
+
 import vim, urllib2
 import json
 
-VIMCUTS = "foo bar blah blah"
+vim.command(':set splitright')
+vim.command('vnew');
+vim.current.window.width = 40
 
-try:
-    response = urllib2.urlopen(URL, None, TIMEOUT).read()
-    json_response = json.loads(response)
+fp = open('data.txt', 'r')
+data = fp.read()
+spl = data.split('\n');
+for dat in spl:
+    vim.current.buffer.append(dat);
 
-    print "this is not what I want"
+fp.close()
 
-except Exception, e:
-    print e
-vim.command("new")
-vim.current.buffer.append("%s"%VIMCUTS);
+#vim.current.buffer.append(VC)
 #vim.current.buffer.append("DATA: %s"%json_response)
 EOF
 endfunction
-
-
