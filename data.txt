@@ -8,3 +8,19 @@
                 ↓
                 j
 
+
+Cursor movement
+w  next word
+W  next word [!punctuations]
+e  end of word
+E  end of word [!punctuations]
+b  previous word
+B  previous word [!punctuation]
+0  (zero) start of line
+^  first non-blank character of line
+$  end of line
+
+Insert Mode Inserting/Appending text
+i  start insert mode at cursor
+I  insert at the beginning of the line
+a  append after the cursor
