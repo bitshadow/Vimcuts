@@ -1,7 +1,3 @@
-////////////////////////////////////
-/////////------VIMCUTS------////////
-////////////////////////////////////
-
                 k
                 ↑
             h ← o → l
@@ -10,6 +6,7 @@
 
 
 Cursor movement
+---------------
 w  next word
 W  next word [!punctuations]
 e  end of word
@@ -21,23 +18,108 @@ B  previous word [!punctuation]
 $  end of line
 
 Insert Mode Inserting/Appending text
-i  Start insert mode at cursor
-I  Insert at the beginning of the line
+------------------------------------
+i  Insert mode
+I  Insert at line beginning
 a  Append after the cursor
 A  Append at the end of the line
-o  Append blank line below current line
-O  Open blank line above current line
+o  Append blank line below
+O  Prepend blank line above
 ea  append at end of word
 Esc exit insert mode
 
 Editing
-r   Replace a single character (does not use insert mode)
+-------
+r   Replace a single character
 J   Join line below to the current one
-cc  Change (replace) an entire line
-cw  Change (replace) to the end of word
-c$  Change (replace) to the end of line
-s   Delete character at cursor and subsitute text
-S   Delete line at cursor and substitute text (same as cc)
-xp  Transpose two letters (delete and paste, technically)
+cc  Replace an entire line
+cw  Replace to the end of word
+c$  Replace to the end of line
+s   Delete character at cursor
+S   Delete line at cursor
+xp  delete and paste a character
 u   Undo
-.   Repeat last command
+
+Marking text (visual mode)
+--------------------------
+v   start visual mode [select, yank]
+V   start Linewise visual mode
+o   move to other end of marked area
+Ctrlv  start visual block mode
+O   move to Other corner of block
+aw  mark a word
+ab  a () block (with braces)
+aB  a {} block (with brackets)
+ib  inner () block
+iB  inner {} block
+Esc exit visual mode
+
+Visual commands
+---------------
+>   shift right
+<   shift left
+y   yank (copy) marked text
+d   delete marked text
+~   switch case
+
+Cut and Paste
+-------------
+yy  yank (copy) a line
+2yy yank 2 lines
+yw  yank word
+y$  yank to end of line
+p   put (paste) the clipboard after cursor
+P   put (paste) before cursor
+dd  delete (cut) a line
+dw  delete (cut) the current word
+x   delete (cut) current character
+
+Exiting
+-------
+:w  write (save) the file, but don't exit
+:wq write (save) and quit
+:q  quit (fails if anything has changed)
+:q! quit and throw away changes
+
+Search/Replace
+--------------
+/pattern    search for pattern
+?pattern    search backward for pattern
+n   repeat search in same direction
+N   repeat search in opposite direction
+:%s/old/new/g   replace all old with new throughout file
+:%s/old/new/gc  replace all old with new throughout file with confirmations
+
+Working with multiple files
+---------------------------
+:e filename Edit a file in a new buffer
+:bnext (or :bn) go to next buffer
+:bprev (of :bp) go to previous buffer
+:bd delete a buffer (close a file)
+:sp filename    Open a file in a new buffer and split window
+ctrlws Split windows
+ctrlww switch between windows
+ctrlwq Quit a window
+ctrlwv Split windows vertically   Repeat last command
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
