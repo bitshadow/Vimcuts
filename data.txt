@@ -21,6 +21,23 @@ B  previous word [!punctuation]
 $  end of line
 
 Insert Mode Inserting/Appending text
-i  start insert mode at cursor
-I  insert at the beginning of the line
-a  append after the cursor
+i  Start insert mode at cursor
+I  Insert at the beginning of the line
+a  Append after the cursor
+A  Append at the end of the line
+o  Append blank line below current line
+O  Open blank line above current line
+ea  append at end of word
+Esc exit insert mode
+
+Editing
+r   Replace a single character (does not use insert mode)
+J   Join line below to the current one
+cc  Change (replace) an entire line
+cw  Change (replace) to the end of word
+c$  Change (replace) to the end of line
+s   Delete character at cursor and subsitute text
+S   Delete line at cursor and substitute text (same as cc)
+xp  Transpose two letters (delete and paste, technically)
+u   Undo
+.   Repeat last command
