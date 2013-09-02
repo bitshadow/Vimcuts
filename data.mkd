@@ -1,0 +1,120 @@
+                k
+                ↑
+            h ← o → l
+                ↓
+                j
+
+
+Cursor movement
+---------------
+w  Next word [include punctuations]
+W  Next word
+e  End of word [include punctuations]
+E  End of word
+b  Previous word
+B  Previous word [include punctuations]
+0  (zero) start of line
+^  First non-blank character of line
+$  End of line
+
+Insert Mode Inserting/Appending text
+------------------------------------
+i  Insert mode
+I  Insert at line beginning
+a  Append after the cursor
+A  Append at the end of the line
+o  Append blank line below
+O  Prepend blank line above
+ea  Append at end of word
+Esc Exit insert mode
+
+Editing
+-------
+r   Replace a single character
+J   Join line below to the current one
+cc  Replace an entire line
+cw  Replace to the end of word
+c$  Replace to the end of line
+s   Delete character at cursor
+S   Delete line at cursor
+xp  Delete and paste a character
+u   Undo
+
+Marking text (visual mode)
+--------------------------
+v      Start visual mode [select, yank]
+V      Start Linewise visual mode
+o      Move to other end of marked area
+Ctrlv  Start visual block mode
+O      Move to Other corner of block
+aw     Mark a word
+ab     A () block (with braces)
+aB     A {} block (with brackets)
+ib     Inner () block
+iB     Inner {} block
+Esc    Exit visual mode
+
+Visual commands
+===============
+>   Shift right
+<   Shift left
+y   Yank (copy) marked text
+d   Delete marked text
+~   Switch case
+
+Select text between:
+
+Parenthesis "()[]":
+v%  If cursor is on the start/end
+vib If cursor is inside the parenthesis
+
+Quotes '"'':
+vi" for double quotes
+vi' for single quotes
+
+Curly Brace Block '{}'
+viB   Any where in between braces
+vi{   Any where in between braces
+
+
+Cut and Paste
+-------------
+yy  Yank (copy) a line
+2yy Yank 2 lines
+yw  Yank word
+y$  Yank to end of line
+p   Paste after cursor
+P   Paste before cursor
+dd  Delete (cut) a line
+dw  Delete (cut) the current word
+x   delete (cut) current character
+
+Exiting
+-------
+:w  Save the file, but don't exit
+:wq Save and quit
+:q  Quit(fails if anything has changed)
+:q! Quit and throw away changes
+
+Search/Replace
+--------------
+/pattern   Search for pattern
+?pattern   Search backward for pattern
+n   Repeat search in same direction
+N   Repeat search in opposite direction
+:%s/old/new/g  Replace all old with new
+               throughout file
+:%s/old/new/gc Replace all old with new
+               with confirmations
+
+Working with multiple files
+---------------------------
+:e Filename Edit a file in a new buffer
+:bnext (or :bn) Go to next buffer
+:bprev (of :bp) Go to previous buffer
+:bd  Delete a buffer (close a file)
+:sp fname  split window [horizontal]
+:vsp    Split window [vertical]
+ctrlws  Split windows
+ctrlww  Switch between windows
+ctrlwq  Quit a window
