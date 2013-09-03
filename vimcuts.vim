@@ -33,6 +33,7 @@ function! VCClose()"{{{
 endfunction"}}}
 
 function! OpenVC()
+
 python << EOF
 import vim
 
@@ -60,6 +61,7 @@ else:
     pos = vim.current.window.cursor
     OpenVC()
 EOF
+call Vc_settings()
 endfunction
 
 function! CloseVC()
@@ -79,3 +81,17 @@ def CloseVc():
 CloseVc()
 EOF
 endfunction
+
+function! Vc_settings()
+    setlocal buftype=nofile
+    setlocal bufhidden=hide
+    setlocal noswapfile
+    setlocal nobuflisted
+    setlocal filetype=gundo
+    setlocal nomodifiable
+    setlocal nolist
+    setlocal nonumber
+    setlocal norelativenumber
+    setlocal nowrap
+endfunction
+
