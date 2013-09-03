@@ -1,16 +1,45 @@
+"written by Jignesh Kakadiya
+
 if !has('python')
-    echo "not supported python version"
-    finish
+    echo "not supported python version" finish
 endif
+
+function! Vimcuts_goto_window_buffer_name(name)"{{{
+    if bufwinnr(bufnr(a:name)) != -1
+        exe bufwinnr(bufnr(a:name)) . "wincmd w"
+        return 1
+    else
+        return 0
+    endif
+endfunction"}}}
+
+function! Vc_is_visible()"{{{
+    if bufwinnr(bufnr("__VIMCUTS__")) != -1
+        return 1
+    else
+        return 0
+    endif
+endfunction"}}}
+
+function! VCClose()"{{{
+    if bufwinnr(bufnr('__VIMCUTS__')) != -1
+        exe bufwinnr(bufnr('__VIMCUTS__')) . "wincmd w"
+        quit
+        return 1
+    else
+        echo "vimcuts is already closed!"
+        return 0
+    endif
+endfunction"}}}
 
 function! OpenVC()
 python << EOF
 import vim
 
 def OpenVC():
-    vc_name="__VIMCUTS__"
-    vim.command(':set splitright')
-    vim.command('vnew ' + vc_name)
+    #vim.command(':set splitright')
+    vim.command(':botright vnew __VIMCUTS__')
+
     vim.current.window.width = 50
 
     fp = open('data.mkd', 'r')
@@ -25,8 +54,11 @@ target = int(vim.eval("bufwinnr('__VIMCUTS__')"))-1
 if target >= 0 and target < len(vim.windows):
     print "vimcuts is already open at window: ", target+1
 else:
+    global curbuf
+    global pos
+    curbuf = vim.eval('bufnr(bufname("%"))')
+    pos = vim.current.window.cursor
     OpenVC()
-
 EOF
 endfunction
 
@@ -40,9 +72,10 @@ def CloseVc():
     if target >= 0 and target <= len(vim.windows):
             vim.command('%dwincmd w' % target)
             vim.command('wincmd c')
+            vim.command('%dbuffer' % int(curbuf))
+            vim.current.window.cursor = pos
     else:
         print "vimcuts is already closed!"
 CloseVc()
 EOF
 endfunction
-
