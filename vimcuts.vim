@@ -61,7 +61,6 @@ def OpenVC():
     vim.command('setlocal norelativenumber')
     vim.command('setlocal nowrap')
 
-
 target = int(vim.eval("bufwinnr('__VIMCUTS__')"))-1
 if target >= 0 and target < len(vim.windows):
     print "vimcuts is already open at window: ", target+1
@@ -72,6 +71,11 @@ else:
     pos = vim.current.window.cursor
     OpenVC()
 EOF
+
+nnoremap <script> <silent> <buffer> q :call CloseVC()
+cabbrev  <script> <silent> <buffer> q  call CloseVC()
+cabbrev  <script> <silent> <buffer> quit call CloseVC()
+
 endfunction
 
 function! CloseVC()
