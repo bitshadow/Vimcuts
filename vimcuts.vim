@@ -50,6 +50,17 @@ def OpenVC():
         vim.current.buffer.append(dat);
     fp.close()
     vc_isopen = True;
+    vim.command('setlocal buftype=nofile')
+    vim.command('setlocal bufhidden=hide')
+    vim.command('setlocal noswapfile')
+    vim.command('setlocal nobuflisted')
+    vim.command('setlocal filetype=vimcuts')
+    vim.command('setlocal nomodifiable')
+    vim.command('setlocal nolist')
+    vim.command('setlocal nonumber')
+    vim.command('setlocal norelativenumber')
+    vim.command('setlocal nowrap')
+
 
 target = int(vim.eval("bufwinnr('__VIMCUTS__')"))-1
 if target >= 0 and target < len(vim.windows):
@@ -61,7 +72,6 @@ else:
     pos = vim.current.window.cursor
     OpenVC()
 EOF
-call Vc_settings()
 endfunction
 
 function! CloseVC()
@@ -73,6 +83,7 @@ def CloseVc():
     #vim.current.buffer.append(str(target)+ " " + str(len(vim.windows)))
     if target >= 0 and target <= len(vim.windows):
             vim.command('%dwincmd w' % target)
+            vim.command('setlocal modifiable')
             vim.command('wincmd c')
             vim.command('%dbuffer' % int(curbuf))
             vim.current.window.cursor = pos
@@ -80,18 +91,5 @@ def CloseVc():
         print "vimcuts is already closed!"
 CloseVc()
 EOF
-endfunction
 
-function! Vc_settings()
-    setlocal buftype=nofile
-    setlocal bufhidden=hide
-    setlocal noswapfile
-    setlocal nobuflisted
-    setlocal filetype=gundo
-    setlocal nomodifiable
-    setlocal nolist
-    setlocal nonumber
-    setlocal norelativenumber
-    setlocal nowrap
 endfunction
-
