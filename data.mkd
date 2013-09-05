@@ -5,8 +5,8 @@
                 j
 
 
- Cursor movement
- ===============
+**Cursor movement**
+  ===============
  w  Next word [include punctuations]
  W  Next word
  e  End of word [include punctuations]
@@ -17,8 +17,8 @@
  ^  First non-blank character of line
  $  End of line
 
- Insert Mode Inserting/Appending text
- ====================================
+**Insert Mode Inserting/Appending text**
+  ====================================
  i  Insert mode
  I  Insert at line beginning
  a  Append after the cursor
@@ -28,8 +28,8 @@
  ea  Append at end of word
  Esc Exit insert mode
 
- Editing
- =======
+**Editing**
+  =======
  r   Replace a single character
  J   Join line below to the current one
  C  Replace an entire line
@@ -40,8 +40,8 @@
  xp  Delete and paste a character
  u   Undo
 
- Marking text (visual mode)
- ==========================
+**Marking text (visual mode)**
+  ==========================
  v      Start visual mode [select, yank]
  V      Start Linewise visual mode
  o      Move to other end of marked area
@@ -54,16 +54,16 @@
  iB     Inner {} block
  Esc    Exit visual mode
 
- Visual commands
- ===============
+**Visual commands**
+  ===============
  >   Shift right
  <   Shift left
  y   Yank (copy) marked text
  d   Delete marked text
  ~   Switch case
 
- Select text between:
-
+*Select text between*
+ -------------------
  Parenthesis "()[]":
  v%  If cursor is on the start/end
  vib If cursor is inside the parenthesis
@@ -77,7 +77,7 @@
  vi{   Any where in between braces
 
 
- Cut and Paste
+*Cut and Paste*
  -------------
  yy  Yank (copy) a line
  2yy Yank 2 lines
@@ -89,15 +89,15 @@
  dw  Delete (cut) the current word
  x   delete (cut) current character
 
- Exiting
- -------
+**Exiting**
+  =======
  :w  Save the file, but don't exit
  :wq Save and quit
  :q  Quit(fails if anything has changed)
  :q! Quit and throw away changes
 
- Search/Replace
- --------------
+**Search/Replace**
+  ==============
  /pattern   Search for pattern
  ?pattern   Search backward for pattern
  n   Repeat search in same direction
@@ -107,8 +107,8 @@
  :%s/old/new/gc Replace all old with new
  with confirmations
 
- Working with multiple files
- ===========================
+**Working with multiple files**
+  ===========================
  :e Filename Edit a file in a new buffer
  :bnext (or :bn) Go to next buffer
  :bprev (of :bp) Go to previous buffer

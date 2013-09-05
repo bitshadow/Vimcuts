@@ -24,6 +24,7 @@ endfunction"}}}
 function! VCClose()"{{{
     if bufwinnr(bufnr('__VIMCUTS__')) != -1
         exe bufwinnr(bufnr('__VIMCUTS__')) . "wincmd w"
+        setlocal nomodifiable
         quit
         return 1
     else
@@ -76,6 +77,11 @@ nnoremap <script> <silent> <buffer> q :call CloseVC()
 cabbrev  <script> <silent> <buffer> q  call CloseVC()
 cabbrev  <script> <silent> <buffer> quit call CloseVC()
 
+syn match vcbullets '='
+syn match vcb '*'
+hi def link vcbullets Keyword
+hi def link vcb Keyword
+
 endfunction
 
 function! CloseVC()
@@ -88,6 +94,7 @@ def CloseVc():
     if target >= 0 and target <= len(vim.windows):
             vim.command('%dwincmd w' % target)
             vim.command('setlocal modifiable')
+            vim.current.buffer[:] = None
             vim.command('wincmd c')
             vim.command('%dbuffer' % int(curbuf))
             vim.current.window.cursor = pos
