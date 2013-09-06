@@ -1,3 +1,10 @@
+Search
+======
+ /pattern   Search for pattern
+ ?pattern   Search backward for pattern
+ n   Repeat search in same direction
+ N   Repeat search in opposite direction
+
 Move
 ====
 
@@ -6,6 +13,9 @@ Move
             h ← o → l
                 ↓
                 j
+
+ Ctrl+d Page Down
+ Ctrl+u Page Up
 
 Cut
 ===
@@ -17,7 +27,7 @@ Copy
 ====
  y   Yank (copy) marked text
  yy  Yank (copy) a line
- 2yy Yank 2 lines
+ 2yy Yank 2 lines after cursor
  yw  Yank word
  y$  Yank to end of line
 
@@ -105,14 +115,6 @@ Text between
  viB   Any where in between braces
  vi{   Any where in between braces
 
-
-Search
-======
- /pattern   Search for pattern
- ?pattern   Search backward for pattern
- n   Repeat search in same direction
- N   Repeat search in opposite direction
-
 Replace
 =======
  :%s/old/new/g  Replace all old with new
@@ -131,7 +133,7 @@ Split window
 ============
  :sp fname   split window [horizontal]
  :vsp fname  Split window [vertical]
- ctrlws  Split windows
- ctrlww  Switch between windows
- ctrlwq  Quit a window
+ Ctrl+w+s  Split windows
+ Ctrl+w+w  Switch between windows
+ Ctrl+w+q  Quit a window
 
