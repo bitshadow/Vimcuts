@@ -1,43 +1,43 @@
-Search
-======
+ Search
+ ======
  /pattern   Search for pattern
  ?pattern   Search backward for pattern
  n   Repeat search in same direction
  N   Repeat search in opposite direction
 
-Move
-====
+ Move
+ ====
 
-                k
-                ↑
-            h ← o → l
-                ↓
-                j
+     k
+     ↑
+ h ← o → l
+     ↓
+     j
 
  Ctrl+d Page Down
  Ctrl+u Page Up
 
-Cut
-===
+ Cut
+ ===
  dd  Delete (cut) a line
  dw  Delete (cut) the current word
  x   delete (cut) current character
 
-Copy
-====
+ Copy
+ ====
  y   Yank (copy) marked text
  yy  Yank (copy) a line
  2yy Yank 2 lines after cursor
  yw  Yank word
  y$  Yank to end of line
 
-Paste
-=====
+ Paste
+ =====
  p   Paste after cursor
  P   Paste before cursor
 
-GoTo
-====
+ GoTo
+ ====
  w  Next word [include punctuations]
  W  Next word
  e  End of word [include punctuations]
@@ -48,15 +48,15 @@ GoTo
  ^  First non-blank character of line
  $  End of line
 
-Delete
-======
+ Delete
+ ======
  s   Delete character at cursor
  S   Delete line at cursor
  xp  Delete and paste a character
  d   Delect Selected text [visual mode]
 
-Edit
-====
+ Edit
+ ====
  r   Replace a single character
  J   Join line below to the current one
  C   Replace an entire line
@@ -65,8 +65,8 @@ Edit
  u   Undo
  #r  Redo  '#' → Ctrl
 
-Insert / Append
-===============
+ Insert / Append
+ ===============
  i  Insert mode
  I  Insert at line beginning
  a  Append after the cursor
@@ -76,21 +76,21 @@ Insert / Append
  ea  Append at end of word
  Esc Exit insert mode
 
-Exit
-====
+ Exit
+ ====
  :w  Save the file, but don't exit
  :wq Save and quit
  :q  Quit(fails if data has changed)
  :q! Quit and throw away changes
 
-Visual [v is your friend]
-======
+ Visual [v is your friend]
+ ======
  v      Start visual mode [select, yank]
  V      Start Linewise visual mode
  Ctrlv  Start visual block mode
 
-Select
-------
+ Select
+ ------
  aw     A word
  ab     A () block (with braces)
  aB     A {} block {with brackets}
@@ -101,8 +101,8 @@ Select
  <   Shift left
  ~   Switch case
 
-Text between
-------------
+ Text between
+ ------------
  Parenthesis "()[]"
  v%  If cursor is on the start/end
  vib If cursor is inside the parenthesis
@@ -115,25 +115,24 @@ Text between
  viB   Any where in between braces
  vi{   Any where in between braces
 
-Replace
-=======
+ Replace
+ =======
  :%s/old/new/g  Replace all old with new
-                throughout file
+ throughout file
  :%s/old/new/gc Replace all old with new
-                with confirmations
+ with confirmations
 
-Buffers
-=======
+ Buffers
+ =======
  :e Filename Edit a file in a new buffer
  :bnext (or :bn) Go to next buffer
  :bprev (of :bp) Go to previous buffer
  :bd  Delete a buffer (close a file)
 
-Split window
-============
+ Split window
+ ============
  :sp fname   split window [horizontal]
  :vsp fname  Split window [vertical]
  Ctrl+w+s  Split windows
  Ctrl+w+w  Switch between windows
  Ctrl+w+q  Quit a window
-

@@ -79,6 +79,15 @@ cabbrev  <script> <silent> <buffer> quit call CloseVC()
 
 syn match vcbullets '='
 syn match vcb '*'
+
+syn match vchelp '\ *\ '
+syn match vcNumberField '\v\[[0-9]+\]'
+syn match vcNumber '\v[0-9]+' contained containedin=vcNumberField
+
+hi def link vchelp Comment
+hi def link vcNumberField Comment
+hi def link vcNumber Identifier
+
 hi def link vcbullets Keyword
 hi def link vcb Keyword
 
@@ -100,6 +109,7 @@ def CloseVc():
             vim.current.window.cursor = pos
     else:
         print "vimcuts is already closed!"
+
 CloseVc()
 EOF
 
