@@ -4,34 +4,34 @@ if !has('python')
     echo "not supported python version" finish
 endif
 
-function! Vimcuts_goto_window_buffer_name(name)"{{{
-    if bufwinnr(bufnr(a:name)) != -1
-        exe bufwinnr(bufnr(a:name)) . "wincmd w"
-        return 1
-    else
-        return 0
-    endif
-endfunction"}}}
+"function! Vimcuts_goto_window_buffer_name(name)"{{{
+"    if bufwinnr(bufnr(a:name)) != -1
+"        exe bufwinnr(bufnr(a:name)) . "wincmd w"
+"        return 1
+"    else
+"        return 0
+"    endif
+"endfunction"}}}
 
-function! Vc_is_visible()"{{{
-    if bufwinnr(bufnr("__VIMCUTS__")) != -1
-        return 1
-    else
-        return 0
-    endif
-endfunction"}}}
+"function! Vc_is_visible()"{{{
+"    if bufwinnr(bufnr("__VIMCUTS__")) != -1
+"        return 1
+"    else
+"        return 0
+"    endif
+"endfunction"}}}
 
-function! VCClose()"{{{
-    if bufwinnr(bufnr('__VIMCUTS__')) != -1
-        exe bufwinnr(bufnr('__VIMCUTS__')) . "wincmd w"
-        setlocal nomodifiable
-        quit
-        return 1
-    else
-        echo "vimcuts is already closed!"
-        return 0
-    endif
-endfunction"}}}
+"function! VCClose()"{{{
+"if bufwinnr(bufnr('__VIMCUTS__')) != -1
+"        exe bufwinnr(bufnr('__VIMCUTS__')) . "wincmd w"
+"        setlocal nomodifiable
+"        quit
+"        return 1
+"   else
+"        echo "vimcuts is already closed!"
+"        return 0
+"    endif
+"endfunction"}}}
 
 function! OpenVC()
 
